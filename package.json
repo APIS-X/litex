@@ -1,6 +1,6 @@
 {
   "name": "litex",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "轻量级的项目初始化脚手架，支持多种模版。",
   "keywords": [
     "cli",

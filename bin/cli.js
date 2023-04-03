@@ -1,11 +1,11 @@
 #! /usr/bin/env node
 
-const program = require('commander');
+const commander = require('commander');
 const chalk = require('chalk');
 
-const create = require('../lib/create');
+const init = require('../lib/init');
 
-program
+commander
   // 监听 --help 执行
   .on('--help', () => {
     // 新增说明信息
@@ -17,21 +17,21 @@ program
   });
 
 // 配置创建命令
-program
+commander
   // 定义命令和参数
-  .command('create <app-name>')
-  .description('Create a new project')
+  .command('init <app-name>')
+  .description('init a new project')
   // -f or --force 为强制创建，如果创建的目录存在则直接覆盖
   .option('-f, --force', 'Overwrite target directory if it exist')
   .action((name, options) => {
     // 创建逻辑
-    create(name, options);
+    init(name, options);
   });
 
-program
+commander
   // 配置版本号信息
   .version(`v${require('../package.json').version}`)
   .usage('<command> [option]');
 
 // 解析用户执行命令传入参数
-program.parse(process.argv);
+commander.parse(process.argv);

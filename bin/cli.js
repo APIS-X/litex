@@ -1,18 +1,18 @@
 #! /usr/bin/env node
 
 const commander = require('commander');
-const chalk = require('chalk');
 
 const init = require('../lib/init');
+const { consoleRewrite } = require('../lib/utils');
+
+consoleRewrite();
 
 commander
   // 监听 --help 执行
   .on('--help', () => {
     // 新增说明信息
     console.log(
-      `\r\nRun ${chalk.cyan(
-        `litex <command> --help`
-      )} for detailed usage of given command\r\n`
+      `\r\nRun litex <command> --help for detailed usage of given command\r\n`
     );
   });
 

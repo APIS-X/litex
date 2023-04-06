@@ -4,8 +4,8 @@
 
 ## 安装
 
-`npm i litex -g`
+ `npm i litex -g`
 
 ## 使用
 
-`litex create <app-name>`
+ `litex init <app-name>`
